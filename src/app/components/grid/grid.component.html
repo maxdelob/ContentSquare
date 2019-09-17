@@ -1,0 +1,7 @@
+<div class='bg-warning' [ngStyle]="{'height.px': MAX_HEIGHT, 'width.px': MAX_WIDTH}" >
+  <div class="border-bottom" [ngStyle]="{'height.px': heightLine}" [ngClass]="{'border-top': line == 0 }"  *ngFor='let line of lines'>
+    <div class="d-inline-flex h-100">
+        <div class="d-flex align-items-center justify-content-center border-right" [ngClass]="{'border-left': col == 0 }" [ngStyle]="{'width.px': widthCol}" *ngFor='let col of cols'>(x = {{col}}, y = {{computeY(line)}})</div> 
+    </div>
+  </div>
+</div>
