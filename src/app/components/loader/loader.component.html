@@ -1,4 +1,12 @@
-<div class='p-5 h-100 rounded'>
-  <span class="col m-5 bg-light">Drive !</span>
-  <span class="col m-5 bg-light">Load a navigation history</span>
+<div class='p-5 rounded bg-light'>
+  <input (change)="openFileLoader($event)" type="file" #file style="display: none;">
+  <span class="m-4">Upload mower position logs</span>
+  <button type="button mb-10" class="btn btn-danger pl-3 pr-3" (click)="file.click()">
+    <i class="material-icons">get_app</i>
+  </button> 
+  <div *ngIf="isLoadedError" class='w-100'></div> 
+  <div *ngIf="isLoadedError" class="d-flex align-items-center justify-content-center text-danger message-error">Error while processing the file. Please load again.</div>
+</div>
+<div class="align-self-end d-flex align-items-center justify-content-center">
+  <a class="text-warning"  href="../../../assets/config/drive.log" download>Download example log file</a>
 </div>
