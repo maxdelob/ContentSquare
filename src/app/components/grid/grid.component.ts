@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfigService } from '../../services/config.service';
 
+const MAX_HEIGHT = 700;
+const MAX_WIDTH = 700;
+
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
@@ -11,13 +14,11 @@ import { ConfigService } from '../../services/config.service';
 export class GridComponent implements OnInit {
   private numLines = 0;
   private numCol = 0;
-  MAX_HEIGHT = 700;
-  MAX_WIDTH = 700;
 
   public lines = [];
   public cols = [];
-  public maxHeight = this.MAX_HEIGHT;
-  public maxWidth = this.MAX_WIDTH;
+  public maxHeight = MAX_HEIGHT;
+  public maxWidth = MAX_WIDTH;
   public heightLine: number;
   public widthCol: number;
 
@@ -40,22 +41,17 @@ export class GridComponent implements OnInit {
     }
   }
   computeHeightEachLine() {
-    this.heightLine =  MAX_HEIGHT / this.numLines;
+    this.heightLine =  this.maxHeight / this.numLines;
     this.heightLine = this.heightLine - 1; // border 1px
     if (this.heightLine < 20) { console.log('Warning: too many lines to display. Deacrease the number of lines.');}
   }
 
   computeWidthEachCol() {
-    this.widthCol =  MAX_HEIGHT / this.numLines;
+    this.widthCol =  this.maxHeight / this.numLines;
     this.widthCol = this.widthCol - 1; // border 1px
     if (this.widthCol < 20) { console.log('Warning: too many col to display. Deacrease the number of col.');}
   }
   computeY(line) {
     return this.numLines - 1 - line;
   }
-
-
-
-  
-
 }
