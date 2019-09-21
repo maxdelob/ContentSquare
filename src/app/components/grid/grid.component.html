@@ -3,7 +3,7 @@
   <i class="material-icons text-danger">arrow_back_ios</i>
   <span class="mr-2 text-danger">Back</span>
 </a>
-<div class='bg-warning' [ngStyle]="{'height.px': MAX_HEIGHT, 'width.px': MAX_WIDTH}" >
+<div class='bg-warning' [ngStyle]="{'height.px': maxHeight, 'width.px': maxWidth}" >
   <div class="border-bottom" [ngStyle]="{'height.px': heightLine}" [ngClass]="{'border-top': line == 0 }"  *ngFor='let line of lines'>
     <div class="d-inline-flex h-100">
         <div class="d-flex align-items-center justify-content-center border-right" [ngClass]="{'border-left': col == 0 }" [ngStyle]="{'width.px': widthCol}" *ngFor='let col of cols'>(x = {{col}}, y = {{computeY(line)}})</div> 
