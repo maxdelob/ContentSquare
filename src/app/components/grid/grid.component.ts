@@ -39,13 +39,12 @@ export class GridComponent implements OnInit {
   }
   computeHeightEachLine() {
     this.heightLine =  this.maxHeight / this.numLines;
-    this.heightLine = this.heightLine - 1; // border 1px
     if (this.heightLine < 20) { console.log('Warning: too many lines to display. Deacrease the number of lines.');}
   }
 
   computeWidthEachCol() {
     this.widthCol =  this.maxWidth / this.numLines;
-    this.widthCol = this.widthCol - 1; // border 1px
+   // this.widthCol = this.widthCol - 1; // border 1px
     if (this.widthCol < 20) { console.log('Warning: too many col to display. Deacrease the number of col.');}
   }
   computeY(line) {
