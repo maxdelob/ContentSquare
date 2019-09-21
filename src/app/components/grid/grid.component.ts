@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfigService } from '../../services/config.service';
 
-const MAX_HEIGHT = 700;
-const MAX_WIDTH = 700;
-
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
@@ -15,7 +12,6 @@ export class GridComponent implements OnInit {
  
   private numLines = 0;
   private numCol = 0;
-
   public lines = [];
   public cols = [];
   public maxHeight = 700;
@@ -55,9 +51,5 @@ export class GridComponent implements OnInit {
   computeY(line) {
     return this.numLines - 1 - line;
   }
-
-
-
-  
 
 }
