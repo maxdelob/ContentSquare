@@ -6,7 +6,22 @@
 <div class='bg-warning' [ngStyle]="{'height.px': maxHeight, 'width.px': maxWidth}" >
   <div class="border-bottom" [ngStyle]="{'height.px': heightLine}" [ngClass]="{'border-top': line == 0 }"  *ngFor='let line of lines'>
     <div class="d-inline-flex h-100">
-        <div class="d-flex align-items-center justify-content-center border-right" [ngClass]="{'border-left': col == 0 }" [ngStyle]="{'width.px': widthCol}" *ngFor='let col of cols'>(x = {{col}}, y = {{computeY(line)}})</div> 
+        <div class="border-right d-flex align-items-center justify-content-center" 
+        [ngClass]="{
+          'border-left': col == 0,
+          'bg-danger': (mowerPosition.x ==  col && mowerPosition.y ==  computeY(line))}"
+         [ngStyle]="{'width.px': widthCol}" *ngFor='let col of cols'>
+          <span>
+             <i *ngIf="(mowerPosition.x ==  col && mowerPosition.y ==  computeY(line))"
+              class="material-icons text-white mowerIcon" 
+              [ngClass]="{
+                'mowerIconNorth': mowerPosition.direction == 'N',
+                'mowerIconEast': mowerPosition.direction == 'E',
+                'mowerIconWest': mowerPosition.direction == 'W',
+                'mowerIconSouth': mowerPosition.direction == 'S'
+              }"> send</i>
+          </span>
+        </div> 
     </div>
   </div>
 </div>

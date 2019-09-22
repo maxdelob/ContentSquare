@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { MowerInstruction } from '../classes/mower-instruction';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
   public maxLatLng: number[] = [];
-  public MowerInstructions: string[] = [];
+  public mowerInstructions: MowerInstruction[] = [];
 
   constructor() {}
 
@@ -18,9 +19,11 @@ export class ConfigService {
 
   getMaxLatLng(): number[] { return this.maxLatLng; }
 
-
-  setMowerInstructions(val: string[]){
-
+  setMowerInstructions(val: MowerInstruction[]){
+    this.mowerInstructions = val;
   }
 
+  getMowerInstructions() {
+    return this.mowerInstructions;
+  }
 }

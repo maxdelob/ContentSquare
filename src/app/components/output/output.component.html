@@ -1,0 +1,19 @@
+<div class='p-5 rounded bg-light'>
+    <span class="text-danger font-weight-bold">Last mowers position</span>
+    <table class="table table-striped text-center">
+      <thead>
+        <tr>
+          <th scope="col">X</th>
+          <th scope="col">Y</th>
+          <th scope="col">Direction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let mower of lastMowerPosition'>
+          <td class="text-center" >{{mower.x}}</td>
+          <td class="text-center">{{mower.y}}</td>
+          <td class="text-center">{{mower.direction}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

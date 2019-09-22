@@ -1,3 +1,21 @@
 a {
     text-decoration: none;
 }
+
+.mowerIcon {
+    font-size: 4rem; 
+}
+.mowerIconNorth {
+ transform: rotate(-90deg);
+}
+.mowerIconEast {
+    transform: rotate(0deg);  
+}
+.mowerIconWest {
+    transform: rotate(180deg);  
+}
+.mowerIconSouth {
+    transform: rotate(90deg);  
+}
+
+
