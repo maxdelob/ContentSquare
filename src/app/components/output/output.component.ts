@@ -17,7 +17,6 @@ export class OutputComponent implements OnInit {
 
   ngOnInit() {
     if (this.lastMowerPosition.length === 0) { this.router.navigate(['./']); }
-    console.log(this.mowerService.getLastMowerPosition())
   }
 
 }

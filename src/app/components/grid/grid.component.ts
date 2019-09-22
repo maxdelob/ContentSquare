@@ -15,17 +15,16 @@ export class GridComponent {
   private speed = 500;
   private numLines = 0;
   private numCol = 0;
-  private maxX = 0;
-  private maxY = 0;
+  public maxX = 0;
+  public maxY = 0;
   public lines = [];
   public cols = [];
   public maxHeight = 700;
   public maxWidth = 700;
   public heightLine: number;
   public widthCol: number;
-
-  private mowerPosition: PositionStart;
-  private mowerInstructions: MowerInstruction[];
+  public mowerPosition: PositionStart;
+  public mowerInstructions: MowerInstruction[];
 
   constructor(private configService: ConfigService, private router: Router, private mowerService: MowerService ) {
     this.createGrid();
@@ -43,7 +42,6 @@ export class GridComponent {
       this.numCol = this.maxX + 1;
       this.maxY = this.configService.getMaxLatLng()[1];
       this.numLines = this.maxY  + 1;
-      this.mowerInstructions = this.configService.getMowerInstructions();
       for (let i = 0; i < this.numLines; i++) { this.lines.push(i); }
       for (let i = 0; i < this.numCol; i++) { this.cols.push(i); }
     }
@@ -62,8 +60,9 @@ export class GridComponent {
   }
 
   async createMowns() {
+    this.mowerInstructions = this.configService.getMowerInstructions();
     let iterator = 0;
-    if(this.mowerInstructions) {
+    if (this.mowerInstructions) {
       for (const instruction of this.mowerInstructions) {
         iterator++;
         await this.startMownInstruction(instruction);
@@ -123,7 +122,7 @@ export class GridComponent {
         break;
     }
    } else {
-    switch(this.mowerPosition.direction) {
+    switch (this.mowerPosition.direction) {
       case 'E':
         this.mowerPosition.direction = 'N';
         break;
@@ -138,7 +137,6 @@ export class GridComponent {
         break;
     }
   }
-
  }
 
  mowerMove() {
