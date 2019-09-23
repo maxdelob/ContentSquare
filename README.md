@@ -8,7 +8,7 @@ Have a look to the demo [Here](https://contentsquare.herokuapp.com)
 
 ## Test the app locally
 
-1 - clone the current git proejct
-2 - npm i 
-3 - ng serve => the app is launch 
-4 - ng test --code_coverage => all the app functionnalities has been tested and the report can be view in the coverage folder
+1 - clone the current git project.
+2 - npm i.
+3 - ng serve => the app is launch.
+4 - ng test --code_coverage => all the app functionnalities has been tested and the report can be view in the coverage folder.
